@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont,
+                     "Segoe UI", Roboto, Arial, sans-serif;
+      }
+      h2 {
+        font-size: 1.6em;
+        font-weight: 600;
+        margin: 0;
+      }
+    </style>
+  </head>
   <body>
     <h2><span id="city">Pamana City</span></h2>
 
     <script>
       fetch("https://ipapi.co/json/")
-        .then(response => response.json())
-        .then(data => {
+        .then(r => r.json())
+        .then(d => {
           document.getElementById("city").textContent =
-            data.city || "Pamana City";
+            d.city || "Pamana City";
         })
         .catch(() => {
           document.getElementById("city").textContent = "Pamana City";
