@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>Welcome to <span id="city">Pamana City</span>!</p>
+
+    <script>
+      fetch("https://ipapi.co/json/")
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("city").textContent =
+            data.city || "Pamana City";
+        })
+        .catch(() => {
+          document.getElementById("city").textContent = "Pamana City";
+        });
+    </script>
+  </body>
+</html>
